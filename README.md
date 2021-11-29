@@ -36,8 +36,8 @@ http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=19
 
 👤 **Jewon Moon**
 
-- GitHub: [@github](https://github.com/jewon1988)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/jewon-moon)
+- GitHub: [@jewon1988](https://github.com/jewon1988)
+- LinkedIn: [jewon-moon](https://linkedin.com/in/jewon-moon)
 
 ## Acknowledgments
 
