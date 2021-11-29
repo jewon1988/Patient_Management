@@ -5,8 +5,8 @@
 ## Built With
 
 - Major languages : Java 8
-- Frameworks : Spring Boot
-- Technologies used : RESTful APIs, JUnit
+- Frameworks : Spring Boot (2.6.0)
+- Technologies used : RESTful APIs, JUnit, Maven
 
 ## Getting Started
 
