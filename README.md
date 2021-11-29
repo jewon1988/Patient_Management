@@ -41,6 +41,4 @@ http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=19
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- 
