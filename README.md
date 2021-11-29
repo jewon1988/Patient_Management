@@ -18,13 +18,16 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
-**Get a list of all patients**
+*Get a list of all patients*
+
 http://localhost:8080/api/patient/list
 
-**Search for a patient by first name**
+*Search for a patient by first name*
+
 http://localhost:8080/api/patient/list?searchString=Jewon8
 
-**Add a new patient**
+*Add a new patient*
+
 http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=1918-03-30
 
 ### Run tests
@@ -33,7 +36,7 @@ http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=19
 
 👤 **Jewon Moon**
 
-- GitHub: [@githubhandle](https://github.com/jewon1988)
+- GitHub: [@github](https://github.com/jewon1988)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/jewon-moon)
 
 ## Acknowledgments
