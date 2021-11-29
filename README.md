@@ -4,7 +4,7 @@
 
 ## Built With
 
-- Major languages : Java
+- Major languages : Java 8
 - Frameworks : Spring Boot
 - Technologies used : RESTful APIs, JUnit
 
