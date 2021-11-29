@@ -1,6 +1,6 @@
 # Patient Management System (UHN Assignment)
 
-> This project is an assignment for Technical Specialist position at University Health Network.
+> This project is an assignment for a Technical Specialist position at University Health Network.
 
 ## Built With
 
@@ -18,15 +18,15 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
-*Get a list of all patients*
+- *URL to get a list of all patients*
 
 http://localhost:8080/api/patient/list
 
-*Search for a patient by first name*
+- *URL to search for a patient by first name*
 
 http://localhost:8080/api/patient/list?searchString=Jewon8
 
-*Add a new patient*
+- *URL to add a new patient*
 
 http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=1918-03-30
 
