@@ -44,6 +44,3 @@ http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=19
 - LinkedIn: [jewon-moon](https://linkedin.com/in/jewon-moon)
 - e-mail: jewon1988@gmail.com
 
-## Acknowledgments
-
-- 
