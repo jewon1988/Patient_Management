@@ -9,7 +9,8 @@
 - Technologies used : RESTful APIs, JUnit, Maven
 
 ## Getting Started
-**Please call the these endpoints below using Postman or curl**
+**Please download the project and run the server using IntelliJ or eclipse.**
+**Then, call the these endpoints below using Postman**
 
 ### Usage
 
