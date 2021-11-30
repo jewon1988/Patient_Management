@@ -14,7 +14,7 @@ import java.util.Map;
 @Service
 public interface PatientService {
 
-    public List<PatientInfo> getPatientInfoList(String searchString) throws Exception;
+    public List<PatientInfo> getPatientInfoList(String searchString, String type) throws Exception;
 
     public Map<String, Object> addNewPatient(PatientInfo patientInfo) throws Exception;
 

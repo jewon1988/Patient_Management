@@ -30,7 +30,7 @@ public class PatientRestController {
      * */
     @GetMapping(path = "/list")
     public List<PatientInfo> getAllPatientList() throws Exception{
-        List<PatientInfo> patientInfoList = patientService.getPatientInfoList("");
+        List<PatientInfo> patientInfoList = patientService.getPatientInfoList("", "all");
         // If result data list is null, throw exception.
         if(patientInfoList.size() == 0){
             throw new DataNotFoundException("Data Not Found");
@@ -48,7 +48,25 @@ public class PatientRestController {
      * */
     @PostMapping(path = "/list")
     public List<PatientInfo> getPatientListBySearchString(@RequestParam String searchString) throws Exception{
-        List<PatientInfo> patientInfoList = patientService.getPatientInfoList(searchString);
+        List<PatientInfo> patientInfoList = patientService.getPatientInfoList(searchString, "firstName");
+        // If result data list is null, throw exception.
+        if(patientInfoList.size() == 0){
+            throw new DataNotFoundException("Data Not Found");
+        }
+
+        return patientInfoList;
+    }
+
+    /*
+     * Get specific patient by identifier
+     * @Param id
+     *
+     * @throws Exception, DataNotFoundException
+     * @return List<PatientInfo> patientInfoList
+     * */
+    @GetMapping(path = "/{id}")
+    public List<PatientInfo> getSpecificPatientById(@PathVariable Integer id) throws Exception{
+        List<PatientInfo> patientInfoList = patientService.getPatientInfoList(id.toString(), "id");
         // If result data list is null, throw exception.
         if(patientInfoList.size() == 0){
             throw new DataNotFoundException("Data Not Found");

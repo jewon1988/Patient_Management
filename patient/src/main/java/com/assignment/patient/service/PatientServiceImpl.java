@@ -5,6 +5,8 @@ import com.assignment.patient.exception.DataNotFoundException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
@@ -20,11 +22,15 @@ import java.util.stream.Collectors;
  * */
 @Service("PatientService")
 public class PatientServiceImpl implements PatientService {
+    private static final Logger logger = LoggerFactory.getLogger(PatientServiceImpl.class);
     // Declare global variable for patient list because there is no database. If it can get a data from database, it should be a local variable.
     private static List<PatientInfo> allPatientInfoList = new ArrayList<>();
 
     // Get patient list
-    public List<PatientInfo> getPatientInfoList(String searchString) throws Exception {
+    public List<PatientInfo> getPatientInfoList(String searchString, String type) throws Exception {
+        logger.info("Call getPatientInfoList(String searchString, String type)");
+        logger.info("@Param searchString: '" + searchString + "' @Param type: '" + type + "'");
+
         // Get patients' data from embedded JSON file at first
         if(allPatientInfoList.size() == 0){
             this.generateJSONData();
@@ -34,17 +40,33 @@ public class PatientServiceImpl implements PatientService {
         List<PatientInfo> patientInfoList = new ArrayList<>();
         try {
             patientInfoList = allPatientInfoList.stream()
-                    .filter(o -> o.getFirstName().equalsIgnoreCase(searchString) || "".equals(searchString))
+                    .filter(o -> {
+                        Boolean isPassed = true;
+                        if(type.equals("firstName") && o.getFirstName().equalsIgnoreCase(searchString)){
+                            isPassed = true;
+                        } else if(type.equals("id") && o.getId().toString().equals(searchString)){
+                            isPassed = true;
+                        } else if(type.equals("all")){
+                            isPassed = true;
+                        } else {
+                            isPassed = false;
+                        }
+
+                        return isPassed;
+                    })
                     .collect(Collectors.toList());
         } catch (Exception e){
-            e.printStackTrace();
+            logger.debug("Error when get a list of patients", e);
+            throw new Exception("Error occurred when get a list of patients");
         }
 
         return patientInfoList;
     }
 
-    // Generate data from embedded JSON file and store data to allPatientInfoList
+    // Generate data by embedded JSON file and store data to allPatientInfoList
     private void generateJSONData() {
+        logger.info("Call generateJSONData()");
+
         try {
             JSONParser jsonParser = new JSONParser();
             // Get data from embedded JSON file
@@ -57,15 +79,20 @@ public class PatientServiceImpl implements PatientService {
                     allPatientInfoList.add(patientInfo);
                 }
             } else {
+                logger.debug("Error when get data from JSON file");
                 throw new DataNotFoundException("JSON Data Not Found");
             }
         } catch (Exception e){
+            logger.debug("Error when generate all patients data", e);
             e.printStackTrace();
         }
     }
 
     // Add new patient
     public Map<String, Object> addNewPatient(PatientInfo newPatientInfo) throws Exception {
+        logger.info("Call addNewPatient(PatientInfo newPatientInfo)");
+        logger.info("@Param newPatientInfo: " + newPatientInfo);
+
         Map<String, Object> mapResult = new HashMap<>();
         String result = "fail";
         Boolean isValid;
@@ -84,6 +111,8 @@ public class PatientServiceImpl implements PatientService {
                     allPatientInfoList.add(newPatientInfo);
                     result = "success";
                 }
+            } else {
+                logger.warn("New patient info is not valid");
             }
         } else {
             throw new DataNotFoundException("Input Data Missing");
@@ -95,7 +124,10 @@ public class PatientServiceImpl implements PatientService {
     }
 
     // Validate new patient info
-    private Boolean validatePatientInfo(PatientInfo newPatientInfo) throws Exception {
+    private Boolean validatePatientInfo(PatientInfo newPatientInfo) {
+        logger.info("Call validatePatientInfo(PatientInfo newPatientInfo)");
+        logger.info("@Param newPatientInfo: " + newPatientInfo);
+
         Boolean isValid = true;
         if("".equalsIgnoreCase(newPatientInfo.getFirstName())){
             isValid = false;
@@ -121,6 +153,8 @@ public class PatientServiceImpl implements PatientService {
 
     // Delete all patients data
     public void deleteAllPatient() {
+        logger.info("Call deleteAllPatient()");
+
         allPatientInfoList.clear();
     }
 }
