@@ -90,9 +90,6 @@ public class PatientServiceImpl implements PatientService {
                     PatientInfo patientInfo = new PatientInfo(patientJsonObject);
                     allPatientInfoList.add(patientInfo);
                 }
-            } else {
-                logger.debug("Error when get data from JSON file");
-                throw new DataNotFoundException("JSON Data Not Found");
             }
         } catch (Exception e){
             logger.debug("Error when generate all patients data", e);
