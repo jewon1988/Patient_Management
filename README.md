@@ -14,10 +14,8 @@
 java -jar /YOUR_PATH/patient/target/patient-0.0.1-SNAPSHOT.jar
 ```
 
-
-**Please call the these endpoints below using Postman**
-
 ### Usage
+**Please call the these endpoints below using Postman**
 
 - *URL to get a list of all patients (GET)*
 ```
