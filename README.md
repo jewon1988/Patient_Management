@@ -35,7 +35,6 @@ http://localhost:8080/api/patient/1
 ```
 http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=1918-03-30
 ```
-### Run tests
 
 ## Authors
 
