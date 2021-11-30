@@ -17,13 +17,13 @@ java -jar YOUR_PATH/UHN_Assignment-main/patient-0.0.1-SNAPSHOT.jar
 ### Usage
 **Please call the these endpoints below using Postman**
 
-- *URL to add a new patient (POST)*
-```
-http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=1918-03-30
-```
 - *URL to get a list of all patients (GET)*
 ```
 http://localhost:8080/api/patient/list
+```
+- *URL to add a new patient (POST)*
+```
+http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=1918-03-30
 ```
 - *URL to search for a patient by first name (POST)*
 ```
