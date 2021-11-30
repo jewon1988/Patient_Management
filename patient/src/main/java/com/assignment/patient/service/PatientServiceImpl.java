@@ -7,9 +7,15 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -68,9 +74,15 @@ public class PatientServiceImpl implements PatientService {
         logger.info("Call generateJSONData()");
 
         try {
-            JSONParser jsonParser = new JSONParser();
             // Get data from embedded JSON file
-            JSONArray patientJsonArray = (JSONArray) jsonParser.parse(new FileReader("src/main/patient.json"));
+            JSONParser jsonParser = new JSONParser();
+            InputStream inputStream = getClass().getResourceAsStream("/patient.json");
+            if(inputStream == null){
+                throw new IllegalArgumentException("Must be existed 'patient.json' file in Resource");
+            }
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String contents = reader.lines().collect(Collectors.joining(System.lineSeparator()));
+            JSONArray patientJsonArray = (JSONArray) jsonParser.parse(contents);
             if(patientJsonArray != null && patientJsonArray.size() > 0){
                 // store data to allPatientInfoList
                 for(Object object : patientJsonArray){
