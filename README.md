@@ -9,7 +9,7 @@
 - Technologies used : RESTful APIs, JUnit, Maven
 
 ## Getting Started
-**Please download the zip file and run the server using IDE or Command Line below.**
+**Please download the zip file and run the server using IDE or the command below.**
 ```
 java -jar YOUR_PATH/UHN_Assignment-main/patient-0.0.1-SNAPSHOT.jar
 ```
