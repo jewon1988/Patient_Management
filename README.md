@@ -9,7 +9,7 @@
 - Technologies used : RESTful APIs, JUnit, Maven
 
 ## Getting Started
-**Please call the these endpoints using curl or Postman**
+**Please call the these endpoints below using curl or Postman**
 
 ### Usage
 
