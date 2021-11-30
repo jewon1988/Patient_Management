@@ -25,7 +25,7 @@ http://localhost:8080/api/patient/list
 ```
 http://localhost:8080/api/patient/list?searchString=Jewon7
 ```
-- *URL to get a specific patient (GET)*
+- *URL to get a specific patient by identifier (GET)*
 ```
 http://localhost:8080/api/patient/1
 ```
