@@ -10,7 +10,7 @@
 
 ## Getting Started
 **Please download the zip file and run the server using IDE or Command Line below.**
-```bash
+```
 java -jar YOUR_PATH/UHN_Assignment-main/patient-0.0.1-SNAPSHOT.jar
 ```
 
