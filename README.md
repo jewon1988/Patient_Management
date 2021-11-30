@@ -19,17 +19,17 @@ To get a local copy up and running follow these simple example steps.
 ### Usage
 
 - *URL to get a list of all patients*
-
+```
 http://localhost:8080/api/patient/list
-
+```
 - *URL to search for a patient by first name*
-
+```
 http://localhost:8080/api/patient/list?searchString=Jewon8
-
+```
 - *URL to add a new patient*
-
+```
 http://localhost:8080/api/patient/add/new?firstName=Jewon8&lastName=Moon8&dob=1918-03-30
-
+```
 ### Run tests
 
 ## Authors
