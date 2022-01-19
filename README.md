@@ -1,6 +1,6 @@
-# Patient Management System (UHN Assignment)
+# Patient Management System
 
-> This project is an assignment for a Technical Specialist position at University Health Network.
+> 
 
 ## Built With
 
