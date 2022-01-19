@@ -11,7 +11,7 @@
 ## Getting Started
 **Please download the zip file and run the server using IDE or the command below.**
 ```
-java -jar YOUR_PATH/UHN_Assignment-main/patient-0.0.1-SNAPSHOT.jar
+java -jar YOUR_PATH/Patient_Management-main/patient-0.0.1-SNAPSHOT.jar
 ```
 
 ### Usage
